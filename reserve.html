@@ -20,7 +20,7 @@
             <h3 class="text-center">Make your reservation</h3>
             <hr>
             <div class="text-center">
-                <a href="/tables"><button type="button" class="btn btn-lg btn-primary"><span
+                <a href="/table"><button type="button" class="btn btn-lg btn-primary"><span
                             class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
                 <a href="/"><button type="button" class="btn btn-lg btn-danger"><span
                             class="glyphicon glyphicon-home"></span></button></a>
@@ -55,7 +55,7 @@
                                 <input type="id" class="form-control" id="idInput">
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary submit">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
             <div class="container">
                 <p>
                     <a href="/api/tables">API Table Link</a>
-                     | 
+                    |
                     <a href="/api/waitlist">API Wait List</a>
                 </p>
             </div>
@@ -74,7 +74,32 @@
     </div>
 
     <script type="text/javascript">
-    
+
+        $('.submit').on('click', function (event) {
+
+            event.preventDefault();
+
+            const newReserveObj = {
+                name: $('#nameInput').val().trim(),
+                phoneNumber: $('#phoneInput').val().trim(),
+                email: $('#emailInput').val().trim(),
+                ID: $('#idInput').val().trim()
+            }
+
+            $('input').val(" ");
+
+            console.log(newReserveObj);
+
+            $.post('/reserve', newReserveObj).then(function(data) {
+                console.log(`Data is: ${data}`);
+                if(data === 'waitlist') {
+                    alert('Sorry, you are on waiting list');
+                } else {
+                    alert('You successfully reserved a table');
+                }
+            })
+
+        })
     </script>
 </body>
 
