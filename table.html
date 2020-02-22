@@ -1,0 +1,52 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Hot-Restaurant</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+  </head>
+  <body>
+      <div class="container">
+          <div class="jumbotron">
+              <h1 class ="text-center"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>Hot Restaurant</h1>
+              <h3 class ="text-center">Current Reservations and Waiting List</h3>
+              <hr>
+              <div class="text-center">
+                <a href="/reserve"><button type="button" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
+                  <a href="/home"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-home"></span></button></a>
+              </div>
+          </div>
+          <div class="row">
+			<div class="col-lg-12">
+                <div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">Current Reservations</h4>
+					</div>
+					<div class="panel-body" id="tableSection"></div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">Waiting List</h4>
+					</div>
+					<div class="panel-body" id="waitlistSection">
+					</div>
+				</div>
+			</div>
+		</div>
+     
+    <footer class="footer">
+      <div class="container">
+          <p>
+              <a href="#" id="clear">Clear Table</a> |
+              <a href="/api/tables">API Table Link</a>
+               | 
+              <a href="/api/waitlist">API Wait List</a>
+          </p>
+      </div>
+  </footer>
+  </div>
+  </body>
