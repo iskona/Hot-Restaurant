@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Reservation Page</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="text-center"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>Hot Restaurant</h1>
+            <h3 class="text-center">Make your reservation</h3>
+            <hr>
+            <div class="text-center">
+                <a href="/tables"><button type="button" class="btn btn-lg btn-primary"><span
+                            class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
+                <a href="/"><button type="button" class="btn btn-lg btn-danger"><span
+                            class="glyphicon glyphicon-home"></span></button></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Table Reservation</h4>
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="nameInput">Name</label>
+                                <input type="name" class="form-control" id="nameInput" aria-describedby="nameHelp">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phoneInput">Phone Number</label>
+                                <input type="phone" class="form-control" id="phoneInput">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emailInput">Email</label>
+                                <input type="email" class="form-control" id="emailInput">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="idInput">Unique ID</label>
+                                <input type="id" class="form-control" id="idInput">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p>
+                    <a href="/api/tables">API Table Link</a>
+                     | 
+                    <a href="/api/waitlist">API Wait List</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript">
+    
+    </script>
+</body>
+
+</html>
