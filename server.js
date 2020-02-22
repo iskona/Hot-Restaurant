@@ -94,12 +94,15 @@ app.post("/reserve", function(req, res){
     if(reserved.length <= 4)
     {
         reserved.push(customerData);
+        res.send("reserved");
     }
     else{
+
         waitList.push(customerData);
+        res.send("waitlist");
     }
 
-    res.send("customer successfully added");
+    console.log(reserved)
 })
 
 
