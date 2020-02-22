@@ -14,40 +14,8 @@ app.use(express.json());
 
 //Reservation array
 
-var reserved = [
-    {
-        routeName: "susan",
-        name: "Susan ",
-        phoneNumber: 123455678,
-        email: "susan@gmail.com",
-        ID: 24
-    },
-
-    {
-        routeName: "RachelGreen",
-        name: "Rachel Green ",
-        phoneNumber: 987654,
-        email: "RGreen@gmail.com",
-        ID: 25
-    }
-];
-const waitList = [
-    {
-        routeName: "Mike Hannigan",
-        name: "Mike ",
-        phoneNumber: 5362762735,
-        email: "MHan@gmail.com",
-        ID: 26
-    },
-
-    {
-        routeName: "NeilOwens",
-        name: "Neil Owens ",
-        phoneNumber: 8773424765,
-        email: "NOwens@gmail.com",
-        ID: 27
-    }
-];
+var reserved = [];
+const waitList = [];
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
@@ -109,23 +77,6 @@ app.get("/clear", function(req, res){
     reserved = [];
     res.sendFile(path.join(__dirname, "table.html"));
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Starts the server to begin listening
 // =============================================================
