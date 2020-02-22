@@ -14,7 +14,7 @@ app.use(express.json());
 
 //Reservation array
 
-const reserved = [
+var reserved = [
     {
         routeName: "susan",
         name: "Susan ",
@@ -103,6 +103,11 @@ app.post("/reserve", function(req, res){
     }
 
     console.log(reserved)
+})
+
+app.get("/clear", function(req, res){
+    reserved = [];
+    res.sendFile(path.join(__dirname, "table.html"));
 })
 
 
