@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Hot-Restaurant</title>
@@ -50,3 +53,33 @@
   </footer>
   </div>
   </body>
+  <script type="text/javascript">
+    $.get("/api/table", function(data){
+        console.log(data);
+        if(data){
+            for(let i=0; i<data.length; i++){
+                var tableDiv = $("<div>");
+                tableDiv.addClass('tableClass');
+                tableDiv.attr('id', 'tableID')
+                $('#tableSection').append(tableDiv);
+                var tabelNumber = i+1;
+                $('#tableSection').append(`<h2><span class="label label-primary">${tabelNumber}</span> |  ${data[i].ID}</h2>`);
+                    
+            }
+        }
+    })
+    $.get("/api/waitlist", function(data){
+        console.log(data);
+        if(data){
+            for(let i=0; i<data.length; i++){
+                var waitlistDiv = $("<div>");
+                waitlistDiv.addClass('waitListClass');
+                waitlistDiv.attr('id', 'waitListID')
+                $('#waitlistSection').append(waitlistDiv);
+                var tabelNumber = i+1;
+                $('#waitlistSection').append(`<h2><span class="label label-primary">${tabelNumber}</span> |  ${data[i].ID}</h2>`);
+            }
+        }
+    })
+      </script>
+</html>
